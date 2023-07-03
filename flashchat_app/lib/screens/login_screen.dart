@@ -1,8 +1,7 @@
 import 'package:flashchat_app/components/rounded_button.dart';
+import 'package:flashchat_app/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,8 +11,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // String? email;
-  // String? password;
+  String? email;
+  String? password;
+  final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               textAlign: TextAlign.center,
               onChanged: (value) {
                 //Do something with the user input.
-                // email = value;
+                email = value;
               },
               style: TextStyle(color: Colors.black),
               decoration:
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
               textAlign: TextAlign.center,
               onChanged: (value) {
                 //Do something with the user input.
-                // password = value;
+                password = value;
               },
               style: TextStyle(color: Colors.black),
               decoration:
@@ -64,7 +64,17 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 24.0,
             ),
             RoundedButton(
-              onPressed: () {},
+              onPressed: () async {
+                try {
+                  final user = await _auth.signInWithEmailAndPassword(
+                      email: email!, password: password!);
+                  if (user != null) {
+                    Navigator.pushNamed(context, ChatScreen.id);
+                  }
+                } catch (e) {
+                  print(e);
+                }
+              },
               color: Colors.lightBlueAccent,
               buttonTitle: 'Log In',
             ),
