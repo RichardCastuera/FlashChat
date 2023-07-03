@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1027557616226",
+    "project_id": "flash-chat-fd9af",
+    "storage_bucket": "flash-chat-fd9af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027557616226:android:017cd7f546dcf73255ff3b",
+        "android_client_info": {
+          "package_name": "com.Llenn.flashchat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027557616226-ijco4f3r3phiimbnaia06eni3b79bbc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVdeFqlWoWqFWg_S1jFEXJoEgyfxx8wiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027557616226-ijco4f3r3phiimbnaia06eni3b79bbc9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
