@@ -17,9 +17,12 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Image.asset('images/logo.png'),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                height: 200.0,
+                child: Image.asset('images/logo.png'),
+              ),
             ),
             SizedBox(
               height: 48.0,
@@ -71,8 +74,8 @@ class _LoginScreenState extends State<LoginScreen> {
   //Refactored for global use
   InputDecoration buildInputDecoration({required String placeHolder}) {
     return InputDecoration(
-      hintText: placeHolder,
-      hintStyle: TextStyle(color: Colors.black),
+      label: Text(placeHolder),
+      labelStyle: TextStyle(color: Colors.black),
       contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(32.0)),
