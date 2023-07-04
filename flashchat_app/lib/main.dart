@@ -20,7 +20,7 @@ class FlashChat extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Colors.black54),
+          bodyLarge: TextStyle(color: Colors.white),
         ),
       ),
       initialRoute: WelcomeScreen.id,
